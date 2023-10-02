@@ -1,40 +1,22 @@
-def dodaj(pierwsza, druga):
-    wynik = pierwsza + druga
-    print(wynik)
+# def czy_parzysta():
+#     liczba = int(input('Podaj liczbe: '))
+    # if liczba % 2 == 0:
+    #     print('Jest parzysta')
+    # elif liczba % 2 == 1:
+    #     print('Jest nieparzysta')
+#     else:
+#         print('Nie podano liczby')
 
-def odejmij(pierwsza, druga):
-    wynik = pierwsza - druga
-    print(wynik)
+# czy_parzysta()
 
-def pomnoz(pierwsza, druga):
-    wynik = pierwsza * druga
-    print(wynik)
-
-def podziel(pierwsza, druga):
-    wynik = pierwsza / druga
-    print(wynik)
-
-
-def start():
+def czy_parzysta():
     try:
-        pierwsza = float(input('Podaj pierwszą liczbę: '))
-        druga = float(input('Podaj drugą liczbę: '))
-        znak = input('Podaj znak matematyczny: ')
-        if znak == '+':
-            dodaj(pierwsza, druga)
-        elif znak == '-':
-            odejmij(pierwsza, druga)
-        elif znak == '*':
-            pomnoz(pierwsza, druga)
-        elif znak == '/':
-            if druga == 0:
-                print('Nie dzielimy przez 0')
-            else:
-                podziel(pierwsza, druga)
-        else:
-            print('Niewłaściwy znak')
-
+        liczba = int(input('Podaj liczbe: '))
+        if liczba % 2 == 0:
+            print('Jest parzysta')
+        elif liczba % 2 == 1:
+            print('Jest nieparzysta')
     except:
-        print('Wprowadzono nieprawidlowe dane')
+        print('Podano niewłaścuwy znak')
 
-start()
+czy_parzysta()
