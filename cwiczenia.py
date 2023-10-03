@@ -1,22 +1,55 @@
-# def czy_parzysta():
-#     liczba = int(input('Podaj liczbe: '))
-    # if liczba % 2 == 0:
-    #     print('Jest parzysta')
-    # elif liczba % 2 == 1:
-    #     print('Jest nieparzysta')
-#     else:
-#         print('Nie podano liczby')
+def wybierz_figure():
+    figura = input('Wybierz figurę (kwadrat, kolo, trojkat): ').lower()
 
-# czy_parzysta()
+    if figura == 'kwadrat':
+        kwadrat()
 
-def czy_parzysta():
+    elif figura == 'kolo' or figura == 'koło':
+        kolo()
+
+    elif figura == 'trojkat' or figura == 'trójkąt':
+        trojkat()
+        
+    else:
+        print('Podano niewłaściwą figurę!')
+
+
+def kwadrat():
     try:
-        liczba = int(input('Podaj liczbe: '))
-        if liczba % 2 == 0:
-            print('Jest parzysta')
-        elif liczba % 2 == 1:
-            print('Jest nieparzysta')
+        bok = float(input('Podaj dlugosc boku kwadratu w cm: '))
+        if bok <=0:
+            raise Exception()
+        pole = bok * bok
+        print(f'Pole kwadratu jest równe {pole}cm')
+        
     except:
-        print('Podano niewłaścuwy znak')
+        wypisz_wyjatek()
 
-czy_parzysta()
+
+def kolo():
+    try:
+        promien = float(input('Podaj promien kola w cm: '))
+        if promien <= 0:
+            raise Exception()
+        pole = promien * 3.14 * promien
+        print(f'Pole koła jest równe {pole}cm')
+    except:
+        wypisz_wyjatek()
+
+
+def trojkat():
+    try:
+        wysokosc = float(input('Podaj wysokość trójkąta: '))
+        podstawa = float(input('Podaj podstawę trójkąta: '))
+        if wysokosc <= 0 or podstawa <= 0:
+            raise Exception()
+        pole = 0.5 * podstawa * wysokosc
+        print(f'Pole trójkąta jest równe {pole}cm')
+    except:
+        wypisz_wyjatek()
+
+def wypisz_wyjatek():
+    print('Podano złą wartość!')
+
+
+wybierz_figure()
